@@ -1,0 +1,222 @@
+@import './_color.scss';
+@import './_reset.scss';
+
+body {
+  background-color: $grayviolet;
+  &::before {
+    content: '';
+    background-image: linear-gradient($magenta, $violet);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 80vh;
+    padding: 5.6rem;
+    z-index: -1;
+    border-bottom-right-radius: 100%;
+    @media (min-width: 1125px) {
+      padding: 12rem;
+      left: -3rem;
+      height: 35vh;
+      border-bottom-left-radius: 40%;
+      border-bottom-right-radius: 40%;
+    }
+  }
+}
+.container {
+  font-family: $ff;
+  padding-bottom: 5rem;
+  .card {
+    margin: 4rem 2rem;
+    border-radius: 20px;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: .5rem 3rem 5rem rgba(0,0,0,.2rem);
+    .top {
+      p {
+        color: $paleviolet;
+      }
+      .burger {
+        color: white;
+        display: flex;
+        justify-content: center;
+        flex-direction: column-reverse;
+      }
+      background-image: linear-gradient(to right,$violet, $magenta);
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 0.5rem;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        padding: 1rem 3rem;
+        background-color: white;
+        top: -0.8rem;;
+        left: 4.5rem;
+        right: 4.5rem;
+        border-radius: 20px;
+      }
+      img {
+        width: 15%;
+        border-radius: 50%;
+      }
+      .content {
+        padding: 1.1rem 0;
+        p {
+          font-weight: bold;
+          margin-left: 0.5rem;
+          margin-bottom: 0.5rem;
+          + * {
+            font-weight: 400;
+          }
+        }
+      }
+    }
+    .chat {
+      display: grid;
+      background-color: $grayviolet;
+      padding: 0 .5rem;
+      // margin: 0 1rem;
+      font-size: 0.8rem;
+      .leftchat {
+        color: $modviolet;
+        padding: 0 2rem;
+        display: flex;
+        flex-flow: row-reverse;
+        margin-right: 20%;
+        border-radius: 10px;
+        background-color: $grayblue;
+        padding: 0.5rem 2rem;
+      }
+      .price {
+        color: $grayblue;
+        ul {
+          padding: 0;
+          text-align: center;
+          li {
+            list-style: none;
+            display: flex;
+            justify-content: baseline;
+            align-items: center;
+            gap: 1rem;
+            background-image: linear-gradient(to right,$magenta, $violet);
+            margin-top: 1rem;
+            width: 80%;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            h1 {
+              padding: 0 0.5rem;
+              display: inline-block;
+            }
+          }
+        }
+      }
+      .rightchat {
+        color: $darkviolet;
+        display: flex;
+        flex-flow: row-reverse;
+        margin-left: 20%;
+        border-radius: 10px;
+        background-color: white;
+        padding: 0.5rem 2rem;
+        box-shadow: 0.2rem 0.2rem 0.15rem rgba(0,0,0,.5rem)
+      }
+    }
+    .chatbox {
+      text-align:center;
+      margin-top: 3rem;
+      position: relative;
+      height: 1rem;
+      padding: 0;
+      padding-bottom: 1rem;
+      &::before {
+        content: '';
+        position: absolute;
+        padding: 1rem;
+        background-color: $darkviolet;
+        border-radius: 20px;
+        right: 0;
+        top: 0;
+        bottom: 0;
+      }
+      input {
+        border-radius: 20px;
+        padding: 0.4rem 2rem;
+      }
+    }
+  }
+  section {
+    text-align: center;
+    padding: 1rem 3rem;
+    h1 {
+      color: $darkviolet;
+      font-size: 2rem;
+    }
+    p {
+      color: $tgrayviolet;
+      line-height: 1.5rem;
+    }
+  }
+  .dogs {
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 1rem;
+    padding: 0 2rem;
+    img {
+      position: relative;
+      max-width:30%;
+      border-radius: 10px;
+      margin-right: 0.5rem;
+    }
+  }
+  @media (min-width: 1125px) {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 50% 50%;
+    // position: relative;
+    .card {
+      float: left;
+      width: 50%;
+      position: relative;
+      left: 13.5rem;
+      top: 1.5rem;
+      .chat {
+        .leftchat, .rightchat {
+          padding: 0.5rem 1rem;
+          margin: 0.3rem;
+        }
+        .price {
+          ul {
+            li {
+              margin-top: 0.5rem;
+            }
+          }
+        }
+        .chatbox {
+          &::before {
+            right: .5rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1366px) {
+  .container {
+    .card {
+      .chat {
+        .chatbox {
+          &::before {
+            right: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+}
